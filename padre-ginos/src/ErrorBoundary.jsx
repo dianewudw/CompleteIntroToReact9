@@ -29,8 +29,4 @@ class ErrorBoundary extends Component {
     }
 }
 
-ErrorBoundary.getDerivedStateFromError()
-
-const eb = new ErrorBoundary()
-
 export default ErrorBoundary

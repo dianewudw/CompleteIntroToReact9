@@ -6,7 +6,14 @@ import { routeTree } from './routeTree.gen'
 
 
 const router = createRouter({ routeTree })
-const queryClient = new QueryClient()
+// updated queryClient to start using React Suspense and use --> TanStack Query has a few ways of doing it, use hook can work with any promise not just TanStack Query
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      experimental_prefetchInRender: true,
+    },
+  },
+})
 
 const App = () => {
   return (
